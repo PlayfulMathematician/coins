@@ -1,3 +1,4 @@
+#This is a my library used in a future article
 def nFlip(r,n,k):
     x=len(r)
     if k+n>x:
