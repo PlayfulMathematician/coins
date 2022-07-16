@@ -1,7 +1,7 @@
 #This is a my library used in a future article
 def nFlip(r,n,k):
     x=len(r)
-    if k+n>x:
+    if k+n<=x:
         r[k:n+k]=list(map((lambda x:1-x),r[k:n+k]))
         return r
     else:
@@ -22,9 +22,11 @@ def sequenceOfNFlip(x,n,bin_list):
     return r
             
     
-def nFlipSolvavle(x,n,debug=0):
+def nFlipSolvable(x,n,debug=0):
     r=list(map((lambda t: 1),list(range(0,x))))
     q=binList(x-n+1)
-    
-    return list(map(lambda e:sequenceOfNFlip(x,n,e),q)) if not debug else return list(map(lambda e:(e,sequenceOfNFlip(x,n,e)),q))
+    if debug == 0:
+        return list(map(lambda e:sequenceOfNFlip(x,n,e),q))
+    else: 
+        return list(map(lambda e:(e,sequenceOfNFlip(x,n,e)),q))
     #return q
