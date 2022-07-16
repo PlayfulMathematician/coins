@@ -22,8 +22,9 @@ def sequenceOfNFlip(x,n,bin_list):
     return r
             
     
-def nFlipSolvavle(x,n):
+def nFlipSolvavle(x,n,debug=0):
     r=list(map((lambda t: 1),list(range(0,x))))
     q=binList(x-n+1)
-    q=list(map(lambda e:sequenceOfNFlip(x,n,e),q))
-    return q
+    
+    return list(map(lambda e:sequenceOfNFlip(x,n,e),q)) if not debug else return list(map(lambda e:(e,sequenceOfNFlip(x,n,e)),q))
+    #return q
